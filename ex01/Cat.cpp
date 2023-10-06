@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:37:14 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 17:17:38 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 17:56:09 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 Cat::Cat() : Animal("Cat")
 {
-	this->_brain = new Brain("cat");
+	this->_brain = new Brain();
+}
+
+Cat::Cat(const std::string& idea) : Animal("Cat")
+{
+	this->_brain = new Brain(idea);
 }
 
 Cat::~Cat()
@@ -24,6 +29,7 @@ Cat::~Cat()
 
 Cat::Cat(const Cat& Cat)
 {
+	this->_brain = new Brain();
 	*this = Cat;
 }
 

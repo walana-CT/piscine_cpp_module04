@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:43:34 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/05 17:40:29 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 18:03:05 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 	/* data */
 public:
 	Dog(/* args */);
+	Dog(const std::string& idea);
 	Dog(const Dog& dog);
 	~Dog();
 	void makeSound();

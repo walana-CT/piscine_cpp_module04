@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:20:22 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/05 17:40:13 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 17:40:49 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 	/* data */
 public:
 	Cat(/* args */);
+	Cat(const std::string& idea); 
 	Cat(const Cat& Cat);
 	~Cat();
 	void makeSound();

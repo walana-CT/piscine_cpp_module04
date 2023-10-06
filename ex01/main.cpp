@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 16:47:07 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 17:57:50 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 
 int main()
 {
-	Dog*	dog1 = new Dog();
-	Animal*	dog2 = new Dog();
-	Cat*	cat1 = new Cat();
-	Animal*	cat2 = new Cat();
+	Cat cat1 = Cat("make the glass fall");
+	Cat cat2 = Cat("purr");
+	Cat cat3 = Cat(cat1);
 
-	std::cout << "dog 2 type: " << dog2->getType() << std::endl;
-	dog1->makeSound();
-	dog2->makeSound();
 
-	std::cout << "dog 2 type: " << dog2->getType() << std::endl;
-	cat1->makeSound();
-	cat2->makeSound();
+	std::cout << "cat 1 idea: " << cat1.getBrain()->getIdea(1) << std::endl;
+	std::cout << "cat 1 brain address: " << (void *)(cat1.getBrain()) << std::endl;
+	std::cout << "cat 2 idea: " << cat2.getBrain()->getIdea(1) << std::endl;
+	std::cout << "cat 2 brain address: " << (void *)(cat2.getBrain()) << std::endl;
+	std::cout << "cat 3 idea: " << cat3.getBrain()->getIdea(1) << std::endl;
+	std::cout << "cat 3 brain address: " << (void *)(cat3.getBrain()) << std::endl;
 
-	delete dog1;
-	delete dog2;
-	delete cat1;
-	delete cat2;
-
+	cat2 = cat1;
+	std::cout << std::endl << "cat 2 = cat 1" << std::endl;
+	std::cout << "cat 2 idea: " << cat2.getBrain()->getIdea(1) << std::endl;
+	std::cout << "cat 2 brain address: " << (void *)(cat2.getBrain()) << std::endl;
 	return 0;
 }

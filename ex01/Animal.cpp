@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:13 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 17:20:58 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 17:52:39 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Animal & Animal::operator = (Animal const & rhs)
 	if (this != &rhs)
 	{
 		this->_type = rhs.getType();
-		this->_brain = rhs.getBrain();
+		*(this->_brain) = *(rhs.getBrain());
 	}
 	return *this;
 }
