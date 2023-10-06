@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/05 17:39:37 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 15:42:12 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 int main()
 {
-	Cat* dog1 = new Cat();
-	Animal* dog2 = new Cat();
+	Dog* dog1 = new Dog();
+	Animal* dog2 = new Dog();
+	Cat* cat1 = new Cat();
+	Animal* cat2 = new Cat();
 
 	dog1->makeSound();
 	dog2->makeSound();
 
+	cat1->makeSound();
+	cat2->makeSound();
 
 	delete dog1;
 	delete dog2;
