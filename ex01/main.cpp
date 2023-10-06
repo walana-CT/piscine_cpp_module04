@@ -6,13 +6,12 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 16:33:49 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/06 16:47:07 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
@@ -33,13 +32,6 @@ int main()
 	delete dog2;
 	delete cat1;
 	delete cat2;
-
-	WrongAnimal*	zinzinCat1 = new WrongCat();
-	WrongCat*		zinzinCat2 = new WrongCat();
-	std::cout << "zinzinCat1 type: " << zinzinCat1->getType() << std::endl;
-	std::cout << "zinzinCat2 type: " << zinzinCat2->getType() << std::endl;
-	zinzinCat1->makeSound();
-	zinzinCat2->makeSound();
 
 	return 0;
 }
