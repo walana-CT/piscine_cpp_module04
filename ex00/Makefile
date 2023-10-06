@@ -6,7 +6,7 @@
 #    By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 16:02:30 by rficht            #+#    #+#              #
-#    Updated: 2023/10/05 16:30:23 by rficht           ###   ########.fr        #
+#    Updated: 2023/10/06 16:21:39 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,9 @@ GFLAG = -g3 -std=c++98
 FILES +=	main.cpp\
 			Animal.cpp\
 			Cat.cpp\
-			Dog.cpp
+			Dog.cpp\
+			WrongAnimal.cpp\
+			WrongCat.cpp
 
 SOURCES = $(FILES)
 OBJ = $(FILES:.cpp=.o)
@@ -71,14 +73,14 @@ $(NAME): $(OBJ)
 	@printf '$(RED)Linking: $(RESET)$@\n'
 	$(CC) $(CFLAG) $(GFLAG) -o $(NAME) $(OBJ);
 	
-# remove .o corresponding to sources	
+# remove .o corresponding to sources
 clean:
-	@printf ' -- cleaning objects $(NAME) -- '
+	@printf ' -- cleaning objects $(NAME) -- \n'
 	@rm -f $(OBJ)
 
 # remove .o and .a corresponding to sources
 fclean: clean
-	@printf ' -- cleaning program $(NAME) -- '
+	@printf ' -- cleaning program $(NAME) -- \n'
 	@rm -f $(NAME)
 
 # force to recompile everything
