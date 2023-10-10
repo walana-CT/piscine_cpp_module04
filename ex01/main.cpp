@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 17:57:50 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/10 10:18:50 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main()
 	Cat cat2 = Cat("purr");
 	Cat cat3 = Cat(cat1);
 
-
 	std::cout << "cat 1 idea: " << cat1.getBrain()->getIdea(1) << std::endl;
 	std::cout << "cat 1 brain address: " << (void *)(cat1.getBrain()) << std::endl;
 	std::cout << "cat 2 idea: " << cat2.getBrain()->getIdea(1) << std::endl;
@@ -31,5 +30,6 @@ int main()
 	std::cout << std::endl << "cat 2 = cat 1" << std::endl;
 	std::cout << "cat 2 idea: " << cat2.getBrain()->getIdea(1) << std::endl;
 	std::cout << "cat 2 brain address: " << (void *)(cat2.getBrain()) << std::endl;
+	
 	return 0;
 }

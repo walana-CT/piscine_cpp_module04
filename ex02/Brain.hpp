@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 15:45:48 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Created: 2023/10/06 16:34:44 by rficht            #+#    #+#             */
+/*   Updated: 2023/10/06 17:44:33 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Dog.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP 
 
-Dog::Dog() : AAnimal("Dog")
-{}
+# include <iostream>
+# include <string>
 
-Dog::~Dog()
-{}
-
-Dog::Dog(const Dog& dog)
+class Brain
 {
-	*this = dog;
-}
+protected:
+	std::string _ideas[100];
+private:
+	/* data */
+public:
+	Brain();
+	Brain(const std::string& idea);
+	Brain(const Brain& brain);
+	~Brain();
+	Brain & operator = (Brain const & rhs);
 
-Dog& Dog::operator = (const Dog& rhs)
-{
-	AAnimal::operator=(rhs);
-	return *this;
-}
+	std::string getIdea(int i) const;
+};
 
-
-void Dog::makeSound()
-{
-	std::cout << "waf waf !" << std::endl;
-}
+#endif

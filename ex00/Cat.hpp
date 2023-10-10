@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:20:22 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/05 17:40:13 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # include "Animal.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 protected:
 	std::string type;

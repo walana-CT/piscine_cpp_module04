@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:13 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:11:05 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,4 @@ AAnimal & AAnimal::operator = (AAnimal const & rhs)
 		*(this->_brain) = *(rhs.getBrain());
 	}
 	return *this;
-}
-
-void AAnimal::makeSound()
-{
-	std::cout << "Animal noize !" << std::endl;
 }

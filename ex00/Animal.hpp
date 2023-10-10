@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/05 17:35:26 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 # include <iostream>
 # include <string>
 
-class Animal
+class AAnimal
 {
 protected:
 	std::string _type;
 private:
 	/* data */
 public:
-	Animal();
-	Animal(const std::string& type);
-	Animal(const Animal& animal);
-	virtual ~Animal();
+	AAnimal();
+	AAnimal(const std::string& type);
+	AAnimal(const AAnimal& animal);
+	virtual ~AAnimal();
 	virtual void makeSound();
 
-	Animal & operator = (Animal const & rhs);
+	AAnimal & operator = (AAnimal const & rhs);
 
 	const std::string& getType() const;
 };

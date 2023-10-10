@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 17:20:22 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Created: 2023/10/05 11:12:31 by rficht            #+#    #+#             */
+/*   Updated: 2023/10/10 15:11:03 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP 
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP 
 
 # include <iostream>
 # include <string>
 
-# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : public AAnimal
+class AAnimal
 {
 protected:
-	std::string type;
+	std::string _type;
+	Brain *_brain;
 private:
 	/* data */
 public:
-	Cat(/* args */);
-	Cat(const std::string& idea); 
-	Cat(const Cat& Cat);
-	~Cat();
-	void makeSound();
+	AAnimal();
+	AAnimal(const std::string& type);
+	AAnimal(const AAnimal& animal);
+	virtual ~AAnimal();
+	virtual void makeSound() = 0;
 
-	Cat& operator=(Cat const & rhs);
+	AAnimal & operator = (AAnimal const & rhs);
+
+	const std::string& getType() const;
+	const Brain* getBrain() const;
 };
 
 #endif
