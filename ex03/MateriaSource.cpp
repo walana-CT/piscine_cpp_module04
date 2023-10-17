@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 11:19:11 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 16:46:33 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ MateriaSource::MateriaSource()
 	std::cout << "MateriaSource constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		known[i] = nullptr;
+}
+
+MateriaSource::MateriaSource(const MateriaSource& m)
+{
+	*this = m;
 }
 
 void MateriaSource::learnMateria(AMateria* m)
@@ -57,3 +62,13 @@ MateriaSource::~MateriaSource()
 			delete known[i];	
 }
 
+MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
+{
+	for (size_t i = 0; i < 4; i++)
+	{
+		if(known[i])
+			delete known[i];
+		known[i] = rhs.known[i];		
+	}
+	return *this;
+}

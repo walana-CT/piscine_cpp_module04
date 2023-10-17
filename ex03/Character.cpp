@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 11:11:59 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 17:03:56 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,21 @@ Character::Character(const std::string& name) : name(name)
 		inventory[i] = nullptr;
 }
 
+Character::Character(Character const & rhs)
+{
+	*this = rhs;
+}
+
 std::string const & Character::getName() const
 {
 	return (this->name);
+}
+
+AMateria* Character::getInventory(int idx) const
+{
+	if (idx < 0 || idx >= 4)
+		return(nullptr);
+	return(this->inventory[idx]);
 }
 
 Character::~Character()
@@ -77,6 +89,17 @@ void Character::use(int idx, ICharacter& target)
 		return;
 	}
 	this->inventory[idx]->use(target);
-
 	return;
+}
+
+Character & Character::operator = (Character const & rhs)
+{
+	this->name = rhs.getName();
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (inventory[i])
+			delete inventory[i];
+		inventory[i] = rhs.getInventory(i);
+	}
+	return *this;
 }
