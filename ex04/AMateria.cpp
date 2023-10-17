@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:20:51 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/11 15:34:44 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 10:49:18 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,4 @@ std::string const & AMateria::getType() const
 }
 
 AMateria::~AMateria()
-{
-	delete this;
-}
+{}

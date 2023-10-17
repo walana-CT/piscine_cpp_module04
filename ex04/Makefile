@@ -6,7 +6,7 @@
 #    By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 16:02:30 by rficht            #+#    #+#              #
-#    Updated: 2023/10/10 15:20:58 by rficht           ###   ########.fr        #
+#    Updated: 2023/10/17 10:39:42 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,13 @@ GFLAG = -g3 -std=c++98
 #	Sources		#
 #---------------#
 FILES +=	main.cpp\
+			AMateria.cpp\
+			Character.cpp\
+			Cure.cpp\
+			Ice.cpp\
+			MateriaSource.cpp
+			
+			
 			
 
 SOURCES = $(FILES)

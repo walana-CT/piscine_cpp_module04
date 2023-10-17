@@ -6,15 +6,14 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:13:12 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/11 15:41:46 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/13 10:59:53 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Cure_HPP
 # define Cure_HPP 
 
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
+# include "MateriaSource.hpp"
 
 class Cure : public AMateria
 {

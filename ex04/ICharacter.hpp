@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IChararacter.hpp                                   :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:23:55 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/11 10:26:13 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 10:21:39 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+class ICharacter;
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
@@ -18,7 +20,7 @@
 class ICharacter
 {
 	public:
-	virtual ~ICharacter() {}
+	virtual ~ICharacter() {};
 	virtual std::string const & getName() const = 0;
 	virtual void equip(AMateria* m) = 0;
 	virtual void unequip(int idx) = 0;
