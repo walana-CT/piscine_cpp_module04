@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:56:32 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 11:08:10 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 17:09:49 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Ice::Ice() : AMateria("ice")
 {	std::cout << "Ice constructor called" << std::endl;}
+
+Ice(const Ice& rhs)
+{
+	*this = rhs;
+}
 
 Ice* Ice::clone() const
 {
@@ -28,4 +33,10 @@ Ice::~Ice()
 void Ice::use(ICharacter& target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+Ice& Ice::operator = (const Ice& rhs)
+{
+	AMateria::operator=(rhs);
+	return *this;
 }

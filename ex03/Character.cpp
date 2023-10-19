@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 17:03:56 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:55:46 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void Character::equip(AMateria* m)
 		if (!inventory[i])
 		{
 			inventory[i] = m;
-			return;		
+			return;
 		}
 	}
 	std::cout << "inventory is full" << std::endl;
@@ -99,7 +99,10 @@ Character & Character::operator = (Character const & rhs)
 	{
 		if (inventory[i])
 			delete inventory[i];
-		inventory[i] = rhs.getInventory(i);
+		if (!rhs.getInventory(i))
+			inventory[i] = nullptr;
+		else
+			inventory[i] = rhs.getInventory(i)->clone();
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 16:46:33 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:53:26 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (!known[i])
 		{
-			known[i] = m;
+			known[i] = m->clone();
 			return;		
 		}		
 	}
@@ -68,7 +68,17 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 	{
 		if(known[i])
 			delete known[i];
-		known[i] = rhs.known[i];		
+		if (!rhs.getKnown(i))
+			known[i] = nullptr;
+		else
+			known[i] = rhs.getKnown(i)->clone();		
 	}
 	return *this;
+}
+
+AMateria* MateriaSource::getKnown(int idx) const
+{
+	if (idx < 0 || idx >= 4)
+		return(nullptr);
+	return(this->known[idx]);
 }

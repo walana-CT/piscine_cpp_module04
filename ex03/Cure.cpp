@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:14:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 11:12:10 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/17 17:08:54 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Cure::Cure() : AMateria("cure")
 {	std::cout << "Cure constructor called" << std::endl;}
+
+Cure::Cure(const Cure& rhs)
+{
+	*this = rhs;
+}
 
 Cure* Cure::clone() const
 {
@@ -28,4 +33,10 @@ Cure::~Cure()
 void Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+Cure& Cure::operator = (const Cure& rhs)
+{
+	AMateria::operator=(rhs);
+	return *this;
 }
