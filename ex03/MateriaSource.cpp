@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 14:29:32 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:39:20 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource constructor called" << std::endl;
+	//std::cout << "MateriaSource constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		known[i] = nullptr;
 }
@@ -24,9 +24,17 @@ MateriaSource::MateriaSource(const MateriaSource& m)
 	*this = m;
 }
 
+MateriaSource::~MateriaSource()
+{
+	//std::cout << "MateriaSource destructor called" << std::endl;
+	for (size_t i = 0; i < 4; i++)
+		if(known[i])
+			delete known[i];	
+}
+
 void MateriaSource::learnMateria(AMateria* m)
 {
-	std::cout << "LearnMateria called with" << m->getType() << std::endl;
+	std::cout << "LearnMateria called with " << m->getType() << std::endl;
 	for (size_t i = 0;i < 4; i++)
 	{
 		if (!known[i])
@@ -41,10 +49,9 @@ void MateriaSource::learnMateria(AMateria* m)
 	return;
 }
 
-
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	std::cout << "MateriaSource creatmateria called with" << type << std::endl;
+	std::cout << "MateriaSource createmateria called with " << type << std::endl;
 
 	for (size_t i = 0; i < 4; i++)
 		if (known[i])
@@ -53,14 +60,6 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 	std::cout << "Unknown Materia" << std::endl;
 	return (nullptr);
-}
-
-MateriaSource::~MateriaSource()
-{
-	std::cout << "MateriaSource destructor called" << std::endl;
-	for (size_t i = 0; i < 4; i++)
-		if(known[i])
-			delete known[i];	
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)

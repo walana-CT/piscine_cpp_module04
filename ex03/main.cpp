@@ -6,14 +6,13 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:10:32 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 11:13:45 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:46:42 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
-
 
 int main()
 {

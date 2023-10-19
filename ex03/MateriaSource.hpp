@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:29:10 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 10:58:27 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:35:09 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ public:
 	MateriaSource();
 	MateriaSource(const MateriaSource& m);
 	~MateriaSource();
+
+	MateriaSource& operator=(MateriaSource const & rhs);
+
 	void learnMateria(AMateria* m);
 	AMateria* createMateria(std::string const & type);
-	MateriaSource& operator=(MateriaSource const & rhs);
 	AMateria* getKnown(int idx) const;
 };
 

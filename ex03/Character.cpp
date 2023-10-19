@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 14:27:24 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 15:44:55 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Character::Character() : name("Bob")
 {
-	std::cout << "Character default constructor called" << std::endl;
+	//std::cout << "Character default constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		inventory[i] = nullptr;
 }
 
 Character::Character(const std::string& name) : name(name)
 {
-	std::cout << "Character constructor called" << std::endl;
+	//std::cout << "Character constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		inventory[i] = nullptr;
 }
@@ -29,6 +29,23 @@ Character::Character(const std::string& name) : name(name)
 Character::Character(Character const & rhs)
 {
 	*this = rhs;
+}
+
+Character::~Character()
+{	//std::cout << "Character destuctor called" << std::endl;
+}
+
+Character & Character::operator = (Character const & rhs)
+{
+	this->name = rhs.getName();
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (!rhs.getInventory(i))
+			inventory[i] = nullptr;
+		else
+			inventory[i] = rhs.getInventory(i);
+	}
+	return *this;
 }
 
 std::string const & Character::getName() const
@@ -42,9 +59,6 @@ AMateria* Character::getInventory(int idx) const
 		return(nullptr);
 	return(this->inventory[idx]);
 }
-
-Character::~Character()
-{	std::cout << "Character destuctor called" << std::endl;}
 
 void Character::equip(AMateria* m)
 {
@@ -92,15 +106,4 @@ void Character::use(int idx, ICharacter& target)
 	return;
 }
 
-Character & Character::operator = (Character const & rhs)
-{
-	this->name = rhs.getName();
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (!rhs.getInventory(i))
-			inventory[i] = nullptr;
-		else
-			inventory[i] = rhs.getInventory(i);
-	}
-	return *this;
-}
+
