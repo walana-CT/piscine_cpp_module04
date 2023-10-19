@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 14:08:41 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:27:24 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,10 @@ Character & Character::operator = (Character const & rhs)
 	this->name = rhs.getName();
 	for (size_t i = 0; i < 4; i++)
 	{
-		if (inventory[i])
-			delete inventory[i];
 		if (!rhs.getInventory(i))
 			inventory[i] = nullptr;
 		else
-			inventory[i] = rhs.getInventory(i)->clone();
+			inventory[i] = rhs.getInventory(i);
 	}
 	return *this;
 }

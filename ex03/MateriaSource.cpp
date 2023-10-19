@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 11:08:31 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:29:32 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (!known[i])
 		{
 			known[i] = m->clone();
+			delete m;
 			return;		
 		}		
 	}
@@ -48,7 +49,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (size_t i = 0; i < 4; i++)
 		if (known[i])
 			if (known[i]->getType() == type)
-				return (known[i]->clone());
+				return (known[i]);
 
 	std::cout << "Unknown Materia" << std::endl;
 	return (nullptr);
