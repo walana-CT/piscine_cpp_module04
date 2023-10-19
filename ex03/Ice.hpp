@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:13:42 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 17:09:24 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 10:58:41 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	~Ice();
 	Ice* clone() const;
 	void use(ICharacter& target);
-	Ice& Ice::operator = (const Ice& rhs);
+	Ice& operator = (const Ice& rhs);
 };
 
 #endif

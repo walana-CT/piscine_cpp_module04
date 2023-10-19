@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:14:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 17:08:54 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:10:37 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ Cure* Cure::clone() const
 }
 
 Cure::~Cure()
-{std::cout << "Cure deconstructor called" << std::endl;}
+{
+	std::cout << "Cure deconstructor called" << std::endl;
+}
 
 void Cure::use(ICharacter& target)
 {

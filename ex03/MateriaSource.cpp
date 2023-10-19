@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 10:53:26 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 11:08:31 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void MateriaSource::learnMateria(AMateria* m)
 			return;		
 		}		
 	}
-	std::cout << "MateriaSource is full" << std::endl;
-
+	std::cout << "MateriaSource is full (materia deleted)" << std::endl;
+	delete m;
 	return;
 }
 

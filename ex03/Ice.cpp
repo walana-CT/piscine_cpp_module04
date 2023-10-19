@@ -6,7 +6,7 @@
 /*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:56:32 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/17 17:09:49 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/19 14:10:18 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice() : AMateria("ice")
 {	std::cout << "Ice constructor called" << std::endl;}
 
-Ice(const Ice& rhs)
+Ice::Ice(const Ice& rhs)
 {
 	*this = rhs;
 }
@@ -28,7 +28,9 @@ Ice* Ice::clone() const
 }
 
 Ice::~Ice()
-{	std::cout << "Ice destructor called" << std::endl;}
+{	
+	std::cout << "Ice destructor called" << std::endl;
+}
 
 void Ice::use(ICharacter& target)
 {
