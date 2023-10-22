@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:11:03 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 16:55:22 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,20 @@
 
 # include "Brain.hpp"
 
-class AAnimal
+class Animal
 {
 protected:
-	std::string _type;
-	Brain *_brain;
-private:
-	/* data */
+	std::string		_type;
+	Brain			*_brain;
 public:
-	AAnimal();
-	AAnimal(const std::string& type);
-	AAnimal(const AAnimal& animal);
-	virtual ~AAnimal();
-	virtual void makeSound() = 0;
+	Animal();
+	Animal(const std::string& type);
+	Animal(const std::string& type, const std::string& idea);
+	Animal(const Animal& animal);
+	virtual ~Animal();
+	virtual void makeSound();
 
-	AAnimal & operator = (AAnimal const & rhs);
+	Animal & operator = (Animal const & rhs);
 
 	const std::string& getType() const;
 	const Brain* getBrain() const;

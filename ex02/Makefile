@@ -6,7 +6,7 @@
 #    By: rficht <rficht@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 16:02:30 by rficht            #+#    #+#              #
-#    Updated: 2023/10/20 10:23:00 by rficht           ###   ########.fr        #
+#    Updated: 2023/10/22 17:08:04 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ RESET	:= \033[0m
 SHELL = /bin/sh
 
 #--- Program name ---#
-NAME = Abstract_animal
+NAME = Animals_02
 
 #--- LIBS ---#
 #--- Includes ---#
@@ -38,7 +38,7 @@ NAME = Abstract_animal
 FLAGS = -Wall -Wextra -Werror
 
 # General compilation flags
-CFLAG = $(FLAGS)  $(INCLUDES) -fsanitize=address -static-libasan
+CFLAG = $(FLAGS)  $(INCLUDES) -std=c++98 #-fsanitize=address
  
 # Linking compilation flags
 GFLAG = -g3 -std=c++98
