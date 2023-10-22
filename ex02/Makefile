@@ -6,7 +6,7 @@
 #    By: rficht <rficht@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 16:02:30 by rficht            #+#    #+#              #
-#    Updated: 2023/10/22 17:08:04 by rficht           ###   ########.fr        #
+#    Updated: 2023/10/22 17:17:36 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ GFLAG = -g3 -std=c++98
 #	Sources		#
 #---------------#
 FILES +=	main.cpp\
-			Animal.cpp\
+			AAnimal.cpp\
 			Brain.cpp\
 			Cat.cpp\
 			Dog.cpp

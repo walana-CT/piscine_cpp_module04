@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/22 16:53:17 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 17:19:31 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main()
 	Cat cat1 = Cat("make the glass fall");
 	Cat cat2 = Cat("purr");
 	Cat cat3 = Cat(cat1);
+	//the bellow line wont compile because it is an abstract class
+	//AAnimal beite = AAnimal();
 
 	std::cout << "cat 1 idea: " << cat1.getBrain()->getIdea(1) << std::endl;
 	std::cout << "cat 1 brain address: " << (void *)(cat1.getBrain()) << std::endl;

@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:20:22 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/22 17:01:49 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 17:15:31 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
 	Cat();

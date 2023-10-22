@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("default"), _brain(new Brain())
+AAnimal::AAnimal() : _type("default"), _brain(new Brain())
 {}
 
-Animal::Animal(const std::string& type) : _type(type), _brain(new Brain())
+AAnimal::AAnimal(const std::string& type) : _type(type), _brain(new Brain())
 {}
 
-Animal::Animal(const std::string& type, const std::string& idea) : _type(type), _brain(new Brain(idea))
+AAnimal::AAnimal(const std::string& type, const std::string& idea) : _type(type), _brain(new Brain(idea))
 {}
 
-Animal::Animal(const Animal& rhs) : _brain(new Brain())
+AAnimal::AAnimal(const AAnimal& rhs) : _brain(new Brain())
 {	*this = rhs;	}
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {	delete (this->_brain);	}
 
-Animal & Animal::operator = (Animal const & rhs)
+AAnimal & AAnimal::operator = (AAnimal const & rhs)
 {
 	if (this != &rhs)
 	{
@@ -37,13 +37,13 @@ Animal & Animal::operator = (Animal const & rhs)
 	return *this;
 }
 
-const std::string& Animal::getType() const
+const std::string& AAnimal::getType() const
 {	return(this->_type);	}
 
-const Brain* Animal::getBrain() const
+const Brain* AAnimal::getBrain() const
 {	return(this->_brain);	}
 
-void Animal::makeSound()
+void AAnimal::makeSound()
 {
-	std::cout << "Animal noize !" << std::endl;
+	std::cout << "AAnimal noize !" << std::endl;
 }
