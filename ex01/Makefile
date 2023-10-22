@@ -6,7 +6,7 @@
 #    By: rficht <rficht@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 16:02:30 by rficht            #+#    #+#              #
-#    Updated: 2023/10/22 17:07:52 by rficht           ###   ########.fr        #
+#    Updated: 2023/10/22 17:22:25 by rficht           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,10 @@ NAME = Animals_01
 FLAGS = -Wall -Wextra -Werror
 
 # General compilation flags
-CFLAG = $(FLAGS)  $(INCLUDES) -std=c++98 #-fsanitize=address
+CFLAG = $(FLAGS)  $(INCLUDES) -std=c++98 -fsanitize=address
  
 # Linking compilation flags
-GFLAG = -g3 -std=c++98
+GFLAG = -g3
 
 #---------------#
 #	Sources		#

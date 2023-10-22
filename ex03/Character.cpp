@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 15:44:55 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 17:21:06 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Character::Character() : name("Bob")
 {
 	//std::cout << "Character default constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
-		inventory[i] = nullptr;
+		inventory[i] = NULL;
 }
 
 Character::Character(const std::string& name) : name(name)
 {
 	//std::cout << "Character constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
-		inventory[i] = nullptr;
+		inventory[i] = NULL;
 }
 
 Character::Character(Character const & rhs)
@@ -41,7 +41,7 @@ Character & Character::operator = (Character const & rhs)
 	for (size_t i = 0; i < 4; i++)
 	{
 		if (!rhs.getInventory(i))
-			inventory[i] = nullptr;
+			inventory[i] = NULL;
 		else
 			inventory[i] = rhs.getInventory(i);
 	}
@@ -56,7 +56,7 @@ std::string const & Character::getName() const
 AMateria* Character::getInventory(int idx) const
 {
 	if (idx < 0 || idx >= 4)
-		return(nullptr);
+		return(NULL);
 	return(this->inventory[idx]);
 }
 
@@ -82,7 +82,7 @@ void Character::unequip(int idx)
 	if (idx >= 0 && idx < 4)
 	{
 		std::cout << this->name << " drop " << this->inventory[idx]->getType() << std::endl;
-		this->inventory[idx] = nullptr;
+		this->inventory[idx] = NULL;
 	}
 	else
 		std::cout << "Invalide inventory slot (0-4)" << std::endl;

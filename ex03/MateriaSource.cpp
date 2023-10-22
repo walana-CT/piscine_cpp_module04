@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 11:18:24 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 15:39:20 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 17:21:41 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ MateriaSource::MateriaSource()
 {
 	//std::cout << "MateriaSource constructor called" << std::endl;
 	for (size_t i = 0; i < 4; i++)
-		known[i] = nullptr;
+		known[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& m)
@@ -59,7 +59,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 				return (known[i]);
 
 	std::cout << "Unknown Materia" << std::endl;
-	return (nullptr);
+	return (NULL);
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
@@ -69,7 +69,7 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 		if(known[i])
 			delete known[i];
 		if (!rhs.getKnown(i))
-			known[i] = nullptr;
+			known[i] = NULL;
 		else
 			known[i] = rhs.getKnown(i)->clone();		
 	}
@@ -79,6 +79,6 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 AMateria* MateriaSource::getKnown(int idx) const
 {
 	if (idx < 0 || idx >= 4)
-		return(nullptr);
+		return(NULL);
 	return(this->known[idx]);
 }
