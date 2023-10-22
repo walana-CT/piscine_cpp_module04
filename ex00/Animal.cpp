@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:13 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 14:49:48 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ AAnimal::AAnimal()
 AAnimal::AAnimal(const std::string& type) : _type(type)
 {}
 
-AAnimal::AAnimal(const AAnimal& animal)
+AAnimal::AAnimal(const AAnimal& rhs)
 {
-	*this = animal;
+	*this = rhs;
 }
 
 AAnimal::~AAnimal()

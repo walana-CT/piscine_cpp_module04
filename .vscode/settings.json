@@ -61,6 +61,12 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"__functional_03": "cpp",
-		"memory_resource": "cpp"
+		"memory_resource": "cpp",
+		"*.tcc": "cpp",
+		"compare": "cpp",
+		"random": "cpp",
+		"clocale": "cpp",
+		"concepts": "cpp",
+		"numbers": "cpp"
 	}
 }

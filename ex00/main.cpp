@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:36:31 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 int main()
 {
-	Dog*	dog1 = new Dog();
+	Dog*		dog1 = new Dog();
 	AAnimal*	dog2 = new Dog();
-	Cat*	cat1 = new Cat();
+	Cat*		cat1 = new Cat();
 	AAnimal*	cat2 = new Cat();
 
 	std::cout << "dog 2 type: " << dog2->getType() << std::endl;
 	dog1->makeSound();
 	dog2->makeSound();
 
-	std::cout << "dog 2 type: " << dog2->getType() << std::endl;
+	std::cout << "cat 2 type: " << cat2->getType() << std::endl;
 	cat1->makeSound();
 	cat2->makeSound();
 
@@ -33,6 +33,10 @@ int main()
 	delete dog2;
 	delete cat1;
 	delete cat2;
+
+	std::cout << std::endl;
+	std::cout << "Weird animal is used to show the importance of virtual methodes (second wrong animal is declared\
+	as) a wrong cat but still makes weird animal sound" << std::endl;
 
 	WrongAnimal*	zinzinCat1 = new WrongCat();
 	WrongCat*		zinzinCat2 = new WrongCat();

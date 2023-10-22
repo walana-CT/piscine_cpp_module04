@@ -3,35 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:43:34 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 17:01:25 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
-# define DOG_HPP 
+# define DOG_HPP
 
 # include <iostream>
 # include <string>
 
 # include "Animal.hpp"
 
-class Dog : public AAnimal
+class Dog : public Animal
 {
-protected:
-	std::string type;
-private:
-	/* data */
 public:
-	Dog(/* args */);
+	Dog();
 	Dog(const std::string& idea);
-	Dog(const Dog& dog);
+	Dog(const Dog& rhs);
 	~Dog();
-	void makeSound();
 
 	Dog& operator=(Dog const & rhs);
+
+	void makeSound();
 };
 
 #endif

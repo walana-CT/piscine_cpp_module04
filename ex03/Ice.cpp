@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:56:32 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 15:38:06 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:16:40 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Ice::Ice() : AMateria("ice")
 {	//std::cout << "Ice constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice& rhs)
+Ice::Ice(const Ice& rhs) : AMateria(rhs)
 {
 	*this = rhs;
 }

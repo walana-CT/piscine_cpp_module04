@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:34:44 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 17:44:33 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 16:59:03 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Brain(const std::string& idea);
 	Brain(const Brain& brain);
 	~Brain();
+	
 	Brain & operator = (Brain const & rhs);
 
 	std::string getIdea(int i) const;

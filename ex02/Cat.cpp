@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:37:14 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:23:54 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Cat::~Cat()
 	delete this->_brain;
 }
 
-Cat::Cat(const Cat& Cat)
+Cat::Cat(const Cat& cat) : AAnimal(cat)
 {
 	this->_brain = new Brain();
-	*this = Cat;
+	*this = cat;
 }
 
 Cat& Cat::operator = (const Cat& rhs)

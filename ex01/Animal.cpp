@@ -3,40 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:13 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 16:58:00 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-AAnimal::AAnimal()
+Animal::Animal() : _type("default"), _brain(new Brain())
 {}
 
-AAnimal::AAnimal(const std::string& type) : _type(type)
+Animal::Animal(const std::string& type) : _type(type), _brain(new Brain())
 {}
 
-AAnimal::AAnimal(const AAnimal& animal)
-{
-	*this = animal;
-}
-
-AAnimal::~AAnimal()
+Animal::Animal(const std::string& type, const std::string& idea) : _type(type), _brain(new Brain(idea))
 {}
 
-const std::string& AAnimal::getType() const
-{
-	return(this->_type);
-}
+Animal::Animal(const Animal& rhs) : _brain(new Brain())
+{	*this = rhs;	}
 
-const Brain* AAnimal::getBrain() const
-{
-	return(this->_brain);
-}
+Animal::~Animal()
+{	delete (this->_brain);	}
 
-AAnimal & AAnimal::operator = (AAnimal const & rhs)
+Animal & Animal::operator = (Animal const & rhs)
 {
 	if (this != &rhs)
 	{
@@ -46,7 +37,13 @@ AAnimal & AAnimal::operator = (AAnimal const & rhs)
 	return *this;
 }
 
-void AAnimal::makeSound()
+const std::string& Animal::getType() const
+{	return(this->_type);	}
+
+const Brain* Animal::getBrain() const
+{	return(this->_brain);	}
+
+void Animal::makeSound()
 {
 	std::cout << "Animal noize !" << std::endl;
 }

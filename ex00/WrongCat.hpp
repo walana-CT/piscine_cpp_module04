@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:11:45 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 16:21:16 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:30:32 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 	/* data */
 public:
 	WrongCat(/* args */);
-	WrongCat(const WrongCat& wrongCat);
+	WrongCat(const WrongCat& rhs);
 	~WrongCat();
 	void makeSound();
 

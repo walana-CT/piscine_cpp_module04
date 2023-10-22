@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:11:26 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/06 16:21:10 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:30:24 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 WrongCat::~WrongCat()
 {}
 
-WrongCat::WrongCat(const WrongCat& wrongCat)
+WrongCat::WrongCat(const WrongCat& rhs) : WrongAnimal(rhs)
 {
-	*this = wrongCat;
+	*this = rhs;
 }
 
 WrongCat& WrongCat::operator = (const WrongCat& rhs)

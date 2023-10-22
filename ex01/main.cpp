@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 10:18:50 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/22 16:53:17 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
 	std::cout << "cat 3 brain address: " << (void *)(cat3.getBrain()) << std::endl;
 
 	cat2 = cat1;
+	
 	std::cout << std::endl << "cat 2 = cat 1" << std::endl;
 	std::cout << "cat 2 idea: " << cat2.getBrain()->getIdea(1) << std::endl;
 	std::cout << "cat 2 brain address: " << (void *)(cat2.getBrain()) << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:14:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 15:38:26 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:16:21 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cure::Cure() : AMateria("cure")
 {	//std::cout << "Cure constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure& rhs)
+Cure::Cure(const Cure& rhs) : AMateria(rhs)
 {
 	*this = rhs;
 }

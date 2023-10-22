@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:45:48 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/20 10:29:36 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Dog::Dog() : AAnimal("Dog")
 Dog::~Dog()
 {}
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& rhs) : AAnimal(rhs)
 {
-	*this = dog;
+	*this = rhs;
 }
 
 Dog& Dog::operator = (const Dog& rhs)
