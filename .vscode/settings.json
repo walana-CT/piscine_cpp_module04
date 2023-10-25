@@ -67,6 +67,10 @@
 		"random": "cpp",
 		"clocale": "cpp",
 		"concepts": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"deque": "cpp",
+		"numeric": "cpp",
+		"ranges": "cpp",
+		"span": "cpp"
 	}
 }

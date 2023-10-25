@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:13:42 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/19 10:58:41 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 16:26:20 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class Ice : public AMateria
 {
-private:
-	/* data */
 public:
 	Ice();
 	Ice(const Ice& rhs);

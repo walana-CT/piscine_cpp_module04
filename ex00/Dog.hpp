@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:43:34 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:16:34 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 
 # include "Animal.hpp"
 
-class Dog : public AAnimal
+class Dog : public Animal
 {
 protected:
 	std::string type;
-private:
-	/* data */
 public:
-	Dog(/* args */);
+	Dog();
 	Dog(const Dog& dog);
 	~Dog();
 	void makeSound();

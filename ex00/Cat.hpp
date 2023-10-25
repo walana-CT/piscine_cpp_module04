@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 17:20:22 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:30:30 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 
 # include "Animal.hpp"
 
-class Cat : public AAnimal
+class Cat : public Animal
 {
 protected:
 	std::string type;
-private:
-	/* data */
 public:
-	Cat(/* args */);
+	Cat();
 	Cat(const Cat& Cat);
 	~Cat();
 	void makeSound();

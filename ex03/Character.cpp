@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:28:19 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/22 17:21:06 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 18:18:34 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,46 +62,48 @@ AMateria* Character::getInventory(int idx) const
 
 void Character::equip(AMateria* m)
 {
-	std::cout << "Character equip called with " << m->getType() << std::endl;
+	std::cout << "Character equip called with " << m->getType() << ".";
 	for (size_t i = 0; i < 4; i++)
 	{
 		if (!inventory[i])
 		{
+			std::cout << " Equiped in slot" << i << std::endl;		
 			inventory[i] = m;
 			return;
 		}
 	}
-	std::cout << "inventory is full" << std::endl;
+	std::cout << " Inventory is full" << std::endl;
 
 	return;
 }
 
 void Character::unequip(int idx)
 {
-	std::cout << "Character destuctor called" << std::endl;
+	std::cout << "Unequip called on " << this->name << ".";
 	if (idx >= 0 && idx < 4)
 	{
-		std::cout << this->name << " drop " << this->inventory[idx]->getType() << std::endl;
+		std::cout << " Droping " << this->inventory[idx]->getType() << std::endl;
 		this->inventory[idx] = NULL;
 	}
 	else
 		std::cout << "Invalide inventory slot (0-4)" << std::endl;
-
 	return;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
+	std::cout << "Use called on " << this->name << " (slot" << idx << ").";	
 	if (idx < 0 || idx >= 4)
 	{
-		std::cout << "Invalide inventory slot (0-4)" << std::endl;
+		std::cout << " Invalide inventory slot (0-4)" << std::endl;
 		return;
 	}
 	if (!this->inventory[idx])
 	{	
-		std::cout << "Selected slot is empty" << std::endl;
+		std::cout << " Selected slot is empty" << std::endl;
 		return;
 	}
+	std::cout << std::endl;
 	this->inventory[idx]->use(target);
 	return;
 }

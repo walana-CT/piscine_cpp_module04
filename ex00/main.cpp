@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:11:56 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/20 10:36:31 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:34:56 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 int main()
 {
 	Dog*		dog1 = new Dog();
-	AAnimal*	dog2 = new Dog();
+	Animal*	dog2 = new Dog();
 	Cat*		cat1 = new Cat();
-	AAnimal*	cat2 = new Cat();
+	Animal*	cat2 = new Cat();
 
 	std::cout << "dog 2 type: " << dog2->getType() << std::endl;
 	dog1->makeSound();
@@ -36,7 +36,7 @@ int main()
 
 	std::cout << std::endl;
 	std::cout << "Weird animal is used to show the importance of virtual methodes (second wrong animal is declared\
-	as) a wrong cat but still makes weird animal sound" << std::endl;
+as) a wrong cat but still makes weird animal sound" << std::endl;
 
 	WrongAnimal*	zinzinCat1 = new WrongCat();
 	WrongCat*		zinzinCat2 = new WrongCat();
@@ -44,6 +44,9 @@ int main()
 	std::cout << "zinzinCat2 type: " << zinzinCat2->getType() << std::endl;
 	zinzinCat1->makeSound();
 	zinzinCat2->makeSound();
+
+	delete zinzinCat1;
+	delete zinzinCat2;
 
 	return 0;
 }

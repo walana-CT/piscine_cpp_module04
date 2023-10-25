@@ -6,41 +6,40 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:13 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/22 14:49:48 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:33:33 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-AAnimal::AAnimal()
-{}
+Animal::Animal()
+{	std::cout << "Constructor: Animal()" << std::endl;	}
 
-AAnimal::AAnimal(const std::string& type) : _type(type)
-{}
+Animal::Animal(const std::string& type) : _type(type)
+{	std::cout << "Constructor: Animal(" << type << ")" << std::endl;	}
 
-AAnimal::AAnimal(const AAnimal& rhs)
+Animal::Animal(const Animal& rhs)
 {
+	std::cout << "Copy constructor: Animal(" << rhs.getType() << ")" << std::endl;	
 	*this = rhs;
 }
 
-AAnimal::~AAnimal()
-{}
+Animal::~Animal()
+{	std::cout << "Destructor: ~Animal()" << std::endl;	}
 
-const std::string& AAnimal::getType() const
+const std::string& Animal::getType() const
 {
 	return(this->_type);
 }
 
-AAnimal & AAnimal::operator = (AAnimal const & rhs)
+Animal & Animal::operator = (Animal const & rhs)
 {
 	if (this != &rhs)
-	{
 		this->_type = rhs.getType();
-	}
 	return *this;
 }
 
-void AAnimal::makeSound()
+void Animal::makeSound()
 {
 	std::cout << "Animal noize !" << std::endl;
 }

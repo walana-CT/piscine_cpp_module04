@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:43:34 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/22 17:16:07 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:22:31 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@
 # include <string>
 
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Dog : public AAnimal
 {
+private:
+	Brain*	_brain;	
 public:
 	Dog();
 	Dog(const std::string& idea);
@@ -29,6 +32,7 @@ public:
 	Dog& operator=(Dog const & rhs);
 
 	void makeSound();
+	const Brain* getBrain() const;
 };
 
 #endif

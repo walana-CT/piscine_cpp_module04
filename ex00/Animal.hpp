@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rficht <robin.ficht@free.fr>               +#+  +:+       +#+        */
+/*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:12:31 by rficht            #+#    #+#             */
-/*   Updated: 2023/10/10 15:04:47 by rficht           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:16:04 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 # include <iostream>
 # include <string>
 
-class AAnimal
+class Animal
 {
 protected:
 	std::string _type;
-private:
-	/* data */
 public:
-	AAnimal();
-	AAnimal(const std::string& type);
-	AAnimal(const AAnimal& animal);
-	virtual ~AAnimal();
+	Animal();
+	Animal(const std::string& type);
+	Animal(const Animal& animal);
+	virtual ~Animal();
 	virtual void makeSound();
 
-	AAnimal & operator = (AAnimal const & rhs);
+	Animal & operator = (Animal const & rhs);
 
 	const std::string& getType() const;
 };
